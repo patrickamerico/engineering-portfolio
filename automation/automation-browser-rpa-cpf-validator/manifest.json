@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Validador de CPF Receita Federal",
+  "version": "1.0",
+  "description": "Valida CPF localmente e consulta situação cadastral via API autorizada.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://api.exemplo-validacao-cpf.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

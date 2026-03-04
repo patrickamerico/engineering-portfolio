@@ -1,0 +1,79 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type='text']:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+small {
+  display: block;
+  margin-bottom: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.cep-data {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead th {
+  background-color: #28a745;
+  color: #fff;
+  padding: 8px;
+  text-transform: capitalize;
+}
+
+tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

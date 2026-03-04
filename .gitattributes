@@ -1,2 +1,40 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings automatically
 * text=auto
+
+# Explicit text files
+*.js     text
+*.ts     text
+*.json   text
+*.md     text
+*.py     text
+*.yml    text
+*.yaml   text
+*.sh     text
+*.env    text
+
+# Shell scripts should use LF
+*.sh text eol=lf
+
+# Windows batch files should use CRLF
+*.bat text eol=crlf
+
+# Mark images as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz  binary
+
+# Prevent diff noise for lock files
+package-lock.json -diff
+poetry.lock -diff
+Pipfile.lock -diff
+
+# Linguist overrides (GitHub language stats)
+*.md linguist-documentation
+docs/** linguist-documentation

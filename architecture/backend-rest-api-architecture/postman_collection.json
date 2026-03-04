@@ -1,0 +1,39 @@
+{
+  "info": {
+    "name": "API Cadastro Usuários",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "description": "Testar a API REST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cadastrar Usuário",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Patrick\",\n  \"email\": \"patrick.exemplo@exemplo.com.br\",\n  \"senha\": \"C0n1ra1ad0\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

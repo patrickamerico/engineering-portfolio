@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página de Consulta de CEP com Vue.js</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app" role="main" class="container">
+    <h1>Página de Consulta de CEP com Vue.js</h1>
+
+    <section aria-labelledby="cep-title" class="cep-section">
+      <h2 id="cep-title">Consulta CEP</h2>
+      <input
+        type="text"
+        v-model="cep"
+        @change="consultaCep"
+        maxlength="8"
+        placeholder="Digite o CEP (apenas números)"
+        aria-describedby="cep-help"
+        pattern="\d{8}"
+        inputmode="numeric"
+      />
+      <small id="cep-help">Informe um CEP válido com 8 dígitos numéricos.</small>
+
+      <article v-if="cepData" class="cep-data" aria-live="polite">
+        <h3>Dados do CEP:</h3>
+        <p><strong>Logradouro:</strong> {{ cepData.logradouro || 'Não informado' }}</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Campo</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(value, key) in cepData" :key="key" v-if="key !== 'logradouro'">
+              <td>{{ key }}</td>
+              <td>{{ value || 'Não informado' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
